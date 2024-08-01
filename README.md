@@ -19,11 +19,13 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v "SyncDisabled" /
 
 > [!IMPORTANT]
 > Open `PowerShell` as Administrator:
+
 > [!TIP]
 > Press `Win + X` and select Windows PowerShell (Admin) from the menu.
 
 > [!IMPORTANT]
 > Run the Command:
+
 > [!TIP]
 > Copy and paste the following command into the `PowerShell` window and press Enter:
 ```
