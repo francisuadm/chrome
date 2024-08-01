@@ -15,7 +15,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v "SyncDisabled" /
 
 
 
-### or simply copy and paste this command:
+### or simply copy and paste this command using powershell as Admin:
 
 ```
 iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/chromeupdate.ps1| iex
