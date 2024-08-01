@@ -1,5 +1,8 @@
-# chrome
-How to force sync-up and update
+> [!NOTE]
+> # Chrome Browser
+
+> [!IMPORTANT]
+> ## How to force sync-up and update
 
 #
 
