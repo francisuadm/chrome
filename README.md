@@ -25,5 +25,5 @@ iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/chromeupdate
 ### try this one 
 
 ```
-powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/chromeupdate.ps1 | iex' -Verb RunAs"
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/chromeupdate.ps1 | iex\"' -Verb RunAs"
 ```
