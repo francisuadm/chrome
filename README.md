@@ -1,7 +1,7 @@
 > [!NOTE]
 > # Chrome Browser
 ## ***_<sub>How to force sync-up and update</sup>_***
-
+<!-- TO DO: add more details about me later -->
 
 #### Open command prompt as admin, then copy and paste the command below:
 
