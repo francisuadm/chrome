@@ -1,6 +1,5 @@
 > [!NOTE]
 > # Chrome Browser
-
 <sup> How to force sync-up and update </sup>
 
 #
