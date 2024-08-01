@@ -3,7 +3,7 @@
 ## ***_<sub>How to force sync-up and update</sup>_***
 
 
-### Open command prompt as admin, then copy and paste the command below:
+#### Open command prompt as admin, then copy and paste the command below:
 
 ```
 reg add "HKLM\SOFTWARE\Policies\Google\Update" /v "AutoUpdateCheckPeriodMinutes" /t REG_DWORD /d 1 /f
