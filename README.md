@@ -18,16 +18,16 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v "SyncDisabled" /
 > **To execute the command as an administrator in Windows 10 using PowerShell, follow these steps:**
 
 > [!IMPORTANT]
-> Open `PowerShell` as Administrator:
+> Open ***`PowerShell`*** as Administrator:
 
 > [!TIP]
-> Press `Win + X` and select Windows PowerShell (Admin) from the menu.
+> Press ***`Win + X`*** and select Windows PowerShell (Admin) from the menu.
 
 > [!IMPORTANT]
 > Run the Command:
 
 > [!TIP]
-> Copy and paste the following command into the `PowerShell` window and press Enter:
+> Copy and paste the following command into the ***`PowerShell`*** window and press Enter:
 > ```
 > iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/chromeupdate.ps1 | iex
 > ```
