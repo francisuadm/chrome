@@ -12,3 +12,11 @@ reg add "HKLM\SOFTWARE\Policies\Google\Update" /v "Update{8A69D345-D564-463C-AFF
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v "SyncDisabled" /t REG_DWORD /d 0 /f
 
 ```
+
+
+
+### or simply copy and paste this command:
+
+```
+iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/chromeupdate.ps1| iex
+```
