@@ -18,7 +18,7 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v "SyncDisabled" /
 ## To execute the command as an administrator in Windows 10 using PowerShell, follow these steps:
 
 * 1) Open `PowerShell` as Administrator:
-   > `#0969DA`Press `Win + X` and select Windows PowerShell (Admin) from the menu.
+   > `#RRGGBB`Press `Win + X` and select Windows PowerShell (Admin) from the menu.
 
 * 2) Run the Command:
    > Copy and paste the following command into the `PowerShell` window and press Enter:
