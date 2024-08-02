@@ -44,3 +44,10 @@ powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -Executi
 ```
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/PSWindowsUpdate.ps1 | iex\"' -Verb RunAs"
 ```
+
+
+
+### Poly Lens Desktop installation
+```
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"Invoke-WebRequest -Uri https://swupdate.lens.poly.com/lens-desktop-windows/1.4.0/1.4.0/PolyLens-1.4.0.msi -OutFile C:\it_folder\PolyLens-1.4.0.msi; Start-Process msiexec.exe -ArgumentList \"/i C:\it_folder\PolyLens-1.4.0.msi /quiet /norestart ALLUSERS=1\" -Wait -NoNewWindow\"' -Verb RunAs"
+```
