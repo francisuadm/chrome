@@ -1,5 +1,5 @@
 # This script requires Run as Administrator
-# Save this script as chromeupdate.ps1
+# Save this script as windowsupdate.ps1
 
 # Function to check for Administrator privileges
 function Test-Administrator {
@@ -13,13 +13,47 @@ if (-not (Test-Administrator)) {
     exit
 }
 
-# Update registry keys
+# Set Execution Policy
 try {
-    New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Update" -Name "AutoUpdateCheckPeriodMinutes" -PropertyType DWord -Value 1 -Force
-    New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Update" -Name "Install{8A69D345-D564-463C-AFF1-A69D9E530F96}" -PropertyType DWord -Value 1 -Force
-    New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Update" -Name "Update{8A69D345-D564-463C-AFF1-A69D9E530F96}" -PropertyType DWord -Value 1 -Force
-    New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome" -Name "SyncDisabled" -PropertyType DWord -Value 0 -Force
-    Write-Host "Registry keys updated successfully."
+    Set-ExecutionPolicy RemoteSigned -Force
+    Write-Host "Execution policy set to RemoteSigned."
 } catch {
-    Write-Host "Failed to update registry keys: $_"
+    Write-Host "Failed to set execution policy: $_"
+    exit
+}
+
+# Install PSWindowsUpdate Module
+try {
+    Install-Module PSWindowsUpdate -Force
+    Write-Host "PSWindowsUpdate module installed successfully."
+} catch {
+    Write-Host "Failed to install PSWindowsUpdate module: $_"
+    exit
+}
+
+# Import the Module
+try {
+    Import-Module PSWindowsUpdate
+    Write-Host "PSWindowsUpdate module imported successfully."
+} catch {
+    Write-Host "Failed to import PSWindowsUpdate module: $_"
+    exit
+}
+
+# Check for Available Updates
+try {
+    $updates = Get-WindowsUpdate
+    Write-Host "Available updates checked successfully."
+} catch {
+    Write-Host "Failed to check for available updates: $_"
+    exit
+}
+
+# Install Updates
+try {
+    Install-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot
+    Write-Host "Updates installed successfully."
+} catch {
+    Write-Host "Failed to install updates: $_"
+    exit
 }
