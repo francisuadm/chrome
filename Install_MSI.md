@@ -15,4 +15,4 @@
 
 Replace `C:\Path\To\Save\PolyLens-1.4.0.msi` with the actual path where you saved the MSI file.
 
-This will install the Poly Lens Desktop app for all users on the computer. If you encounter any issues or need further assistance, feel free to ask!
+This will install the Poly Lens Desktop app for all users on the computer. 
