@@ -57,3 +57,7 @@ try {
     Write-Host "Failed to install updates: $_"
     exit
 }
+
+# Pause to ensure the script waits for user input before closing
+Write-Host "Press any key to exit..."
+[System.Console]::ReadKey() | Out-Null
