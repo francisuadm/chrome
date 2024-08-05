@@ -4,8 +4,8 @@ Here's how you can do it:
 
 1. **Download the MSI file**:
    First, download the MSI file from the provided link:
-<---- Invoke-WebRequest -Uri "https://swupdate.lens.poly.com/lens-desktop-windows/1.4.0/1.4.0/PolyLens-1.4.0.msi" -OutFile "C:\IT_Folder\PolyLens-1.4.0.msi"
----->
+<!-- Invoke-WebRequest -Uri "https://swupdate.lens.poly.com/lens-desktop-windows/1.4.0/1.4.0/PolyLens-1.4.0.msi" -OutFile "C:\IT_Folder\PolyLens-1.4.0.msi" -->
+
    ```powershell
    iwr -Uri "https://swupdate.lens.poly.com/lens-desktop-windows/1.4.0/1.4.0/PolyLens-1.4.0.msi" -OutFile "C:\IT_Folder\PolyLens-1.4.0.msi"
    ```
