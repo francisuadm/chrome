@@ -12,11 +12,12 @@
 > [!TIP]
 > Press ***`Win + X`*** and select Windows PowerShell (Admin) from the menu.
 
+<!--
 > [!IMPORTANT]
 > 
 > Select ***`PowerShell`*** as Administrator:
 
-<!--
+
 > [!IMPORTANT]
 > Run the Command:
 -->
