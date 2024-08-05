@@ -1,4 +1,4 @@
-> # Chrome Browser
+> # **Chrome Browser**
 
 <!--
 ## ***_<sub>How to force sync-up update</sup>_***
