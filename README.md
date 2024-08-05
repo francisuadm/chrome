@@ -7,7 +7,7 @@
 
 
 > [!NOTE]
-> **To execute the command as an administrator in Windows 10 using PowerShell, follow these steps:**
+> **Execute the command as an admin in Windows via PowerShell, follow these steps:**
 
 > [!IMPORTANT]
 > Open ***`PowerShell`*** as Administrator:
