@@ -51,3 +51,8 @@ powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -Executi
 ```
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"Invoke-WebRequest -Uri https://swupdate.lens.poly.com/lens-desktop-windows/1.4.0/1.4.0/PolyLens-1.4.0.msi -OutFile C:\it_folder\PolyLens-1.4.0.msi; Start-Process msiexec.exe -ArgumentList \"/i C:\it_folder\PolyLens-1.4.0.msi /quiet /norestart ALLUSERS=1\" -Wait -NoNewWindow\"' -Verb RunAs"
 ```
+
+### Installation Displaylink
+```
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"winget install --id DisplayLink.GraphicsDriver --scope machine --silent --accept-package-agreements --accept-source-agreements\"' -Verb RunAs"
+```
