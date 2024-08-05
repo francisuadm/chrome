@@ -4,11 +4,13 @@ Here's how you can do it:
 
 1. **Download the MSI file**:
    First, download the MSI file from the provided link:
+<--- Invoke-WebRequest -Uri "https://swupdate.lens.poly.com/lens-desktop-windows/1.4.0/1.4.0/PolyLens-1.4.0.msi" -OutFile "C:\IT_Folder\PolyLens-1.4.0.msi"
+--->
    ```powershell
-   Invoke-WebRequest -Uri "https://swupdate.lens.poly.com/lens-desktop-windows/1.4.0/1.4.0/PolyLens-1.4.0.msi" -OutFile "C:\IT_Folder\PolyLens-1.4.0.msi"
+   iwr -Uri "https://swupdate.lens.poly.com/lens-desktop-windows/1.4.0/1.4.0/PolyLens-1.4.0.msi" -OutFile "C:\IT_Folder\PolyLens-1.4.0.msi"
    ```
 
-2. **Install the MSI file for all users**:
+3. **Install the MSI file for all users**:
    Use the `msiexec` command to install the MSI file for all users. Run the following PowerShell command with administrative privileges:
    ```powershell
    Start-Process msiexec.exe -ArgumentList "/i C:\IT_Folder\PolyLens-1.4.0.msi /quiet /norestart ALLUSERS=1" -Wait -NoNewWindow
