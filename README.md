@@ -16,4 +16,6 @@
 > powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/chromeupdate.ps1 | iex\"' -Verb RunAs"
 > ```
 
-https://www.xelplus.com/windows-keyboard-shortcuts/
+```markdown
+![Amazing Windows Shortcuts](https://www.xelplus.com/wp-content/uploads/2023/09/Amazing-Windows-Shortcuts-15-450x148.png)
+```
