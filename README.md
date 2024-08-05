@@ -5,7 +5,7 @@
 
 
 > [!NOTE]
-> **Execute the command as an admin in Windows via PowerShell, follow these steps:**
+> **Execute the command as an admin in Windows PowerShell, follow these steps:**
 
 > [!TIP]
 > Press ***`Win + X`*** and select Windows PowerShell (Admin) from the menu.
