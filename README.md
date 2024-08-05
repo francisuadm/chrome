@@ -10,6 +10,7 @@
 
 > [!TIP]
 > Press ***`Win + X`*** and select Windows PowerShell (Admin) from the menu.
+> 
 > Press the copy button below and, paste the following command into the ***`PowerShell`*** window and press Enter:
 > 
 > ```
