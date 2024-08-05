@@ -1,6 +1,6 @@
 > [!NOTE]
 > # Chrome Browser
-## ***_<sub>How to force sync-up and update</sup>_***
+## ***_<sub>How to force sync-up update</sup>_***
 <!-- TO DO: add more details about me later -->
 
 
@@ -19,11 +19,5 @@
 > [!TIP]
 > Copy and paste the following command into the ***`PowerShell`*** window and press Enter:
 > ```
-> iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/chromeupdate.ps1 | iex
+> powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/chromeupdate.ps1 | iex\"' -Verb RunAs"
 > ```
-
-### Try this one, by using ***`Win + R`*** then copy and paste command below:
-
-```
-powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/chromeupdate.ps1 | iex\"' -Verb RunAs"
-```
