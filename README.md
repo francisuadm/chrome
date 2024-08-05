@@ -8,16 +8,16 @@
 
 > [!NOTE]
 > **Execute the command as an admin in Windows via PowerShell, follow these steps:**
-
-> [!IMPORTANT]
-> Open ***`PowerShell`*** as Administrator:
-
 > [!TIP]
 > Press ***`Win + X`*** and select Windows PowerShell (Admin) from the menu.
+> [!IMPORTANT]
+> Select ***`PowerShell`*** as Administrator:
+<!--
+
 
 > [!IMPORTANT]
 > Run the Command:
-
+-->
 > [!TIP]
 > Copy and paste the following command into the ***`PowerShell`*** window and press Enter:
 > ```
