@@ -1,5 +1,4 @@
 > # **Chrome Browser**
-
 <!--
 ## ***_<sub>How to force sync-up update</sup>_***
  TO DO: add more details about me later -->
