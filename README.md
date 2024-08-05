@@ -7,8 +7,8 @@
 > [!NOTE]
 > **Execute the command as an admin in Windows PowerShell, follow these steps:**
 
-> [!TIP] :octocat:
-> Press ***`Win + X`*** and select Windows PowerShell (Admin) from the menu.
+> [!TIP]
+> :red_square: Press ***`Win + X`*** and select Windows PowerShell (Admin) from the menu.
 > 
 > > > ***press the copy button below and, paste the command into the ***`PowerShell`*** window and press enter:***
 > 
