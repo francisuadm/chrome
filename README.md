@@ -1,4 +1,4 @@
-# <img src="https://github.com/francisuadm/chrome/blob/343bdd2686862acb0a460f45393898b6d33592f2/ChromeICONS.png" width="86" height="86"> **Chrome Browser**
+# <img src="https://github.com/francisuadm/chrome/blob/924df2550e54a05766eb0f74e95d6df18f92e73e/ChromeICONS.png" width="86" height="86"> **Chrome Browser**
 <!--
 ## ***_<sub>How to force sync-up update</sup>_***
  TO DO: add more details about me later -->
