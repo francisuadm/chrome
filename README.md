@@ -1,4 +1,4 @@
-> # :computer: **Chrome Browser**
+> # <img src="https://github.com/francisuadm/chrome/blob/343bdd2686862acb0a460f45393898b6d33592f2/ChromeICON.png" width="86" height="24"> **Chrome Browser**
 <!--
 ## ***_<sub>How to force sync-up update</sup>_***
  TO DO: add more details about me later -->
