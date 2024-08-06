@@ -8,7 +8,7 @@
 > :pushpin: **Execute the command as an admin in Windows PowerShell, follow these steps:**
 
 > [!TIP]
-> :desktop_computer: Press ***`Win + X`*** <img src="https://github.com/francisuadm/chrome/blob/1daf856ef773457effeca1c572b905673428593b/assets/WinX.png?raw=true"> and select Windows PowerShell (Admin) from the menu.
+> :desktop_computer: Press ***`Win + X`*** ![](https://github.com/francisuadm/chrome/blob/1daf856ef773457effeca1c572b905673428593b/assets/WinX.png | width=100) and select Windows PowerShell (Admin) from the menu.
 > 
 > > > :scissors: ***press the copy button below and, :pencil: paste the command into the ***`PowerShell`*** window and press enter:***
 > 
