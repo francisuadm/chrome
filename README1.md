@@ -48,9 +48,8 @@ powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -Executi
 ### Install Winget 
 
 ```
-powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/add-Poly.ps1 | iex\"' -Verb RunAs"
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/Installer_Winget.ps1 | iex\"' -Verb RunAs"
 ```
-
 
 
 
