@@ -19,9 +19,14 @@ $frameworkUrl = 'https://www.nuget.org/api/v2/package/Microsoft.UI.Xaml/2.8.6'
 $appInstallerUrl = 'https://github.com/microsoft/winget-cli/releases/download/v1.8.1911/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle'
 
 # Paths to save the downloaded packages
-$vcLibsPath = "$env:TEMP\Microsoft.VCLibs.x64.14.00.Desktop.appx"
-$frameworkPath = "$env:TEMP\Microsoft.UI.Xaml.2.8.6.nupkg"
-$appInstallerPath = "$env:TEMP\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+# $vcLibsPath = "$env:TEMP\Microsoft.VCLibs.x64.14.00.Desktop.appx"
+# $frameworkPath = "$env:TEMP\Microsoft.UI.Xaml.2.8.6.nupkg"
+# $appInstallerPath = "$env:TEMP\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+$vcLibsPath = "C:\IT_Folder\Microsoft.VCLibs.x64.14.00.Desktop.appx"
+$frameworkPath = "C:\IT_Folder\Microsoft.UI.Xaml.2.8.6.nupkg"
+$appInstallerPath = "C:\IT_Folder\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+
+
 
 # Download the packages
 Download-File -url $vcLibsUrl -output $vcLibsPath
@@ -32,8 +37,8 @@ Download-File -url $appInstallerUrl -output $appInstallerPath
 Rename-Item -Path $frameworkPath -NewName "$env:TEMP\Microsoft.UI.Xaml.2.8.6.zip"
 
 # Extract the .appx file from the .zip
-Expand-Archive -Path "$env:TEMP\Microsoft.UI.Xaml.2.8.6.zip" -DestinationPath "$env:TEMP\Microsoft.UI.Xaml.2.8.6"
-$extractedFrameworkPath = "$env:TEMP\Microsoft.UI.Xaml.2.8.6/tools/AppX/x64/Release/Microsoft.UI.Xaml.2.8.6.appx"
+Expand-Archive -Path "C:\IT_Folder\Microsoft.UI.Xaml.2.8.6.zip" -DestinationPath "C:\IT_Folder\Microsoft.UI.Xaml.2.8.6"
+$extractedFrameworkPath = "C:\IT_Folder\Microsoft.UI.Xaml.2.8.6/tools/AppX/x64/Release/Microsoft.UI.Xaml.2.8.6.appx"
 
 # Check if the files exist before attempting to install them
 if (Test-Path $vcLibsPath) {
