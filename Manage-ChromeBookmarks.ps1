@@ -52,7 +52,7 @@ function Import-Bookmarks {
 
 # Function to display the menu and handle user choices
 function Show-Menu {
-    do {
+    while ($true) {
         Write-Host ""
         Write-Host "1. Export Chrome bookmarks"
         Write-Host "2. Import Chrome bookmarks"
@@ -62,15 +62,14 @@ function Show-Menu {
         switch ($choice) {
             1 { Export-Bookmarks }
             2 { Import-Bookmarks }
-            3 { Write-Host "Exiting..."; exit }
+            3 { Write-Host "Exiting..."; break }
             default { Write-Host "Invalid choice. Please enter 1, 2, or 3." }
         }
-
-    } while ($choice -ne 3)
+    }
 }
 
 # Show menu
 Show-Menu
 
 # End script
-Write-Host "Exiting..."
+Write-Host "Goodbye!"
