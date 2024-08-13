@@ -1,7 +1,10 @@
-# Function to generate a unique folder path based on current date and time
+# Define the directory to store the wireless profiles
+$basePath = "C:\IT_Folder"
+
+# Function to generate a unique folder path based on the current date and time
 function Get-UniqueFolderPath {
     $timestamp = (Get-Date).ToString("yyyyMMdd_HHmmss")
-    $folderPath = "C:\IT_Folder\Wireless_$timestamp"
+    $folderPath = "$basePath\Wireless_$timestamp"
     return $folderPath
 }
 
@@ -15,22 +18,30 @@ function Export-WifiProfiles {
     Write-Host "All profiles have been exported successfully to $folderPath."
 }
 
-# Function to import wireless profiles
+# Function to import wireless profiles from a list of available backup files
 function Import-WifiProfiles {
-    # Prompt for the folder path to import from
-    $folderPath = Read-Host "Enter the folder path containing the wireless profiles to import"
-
-    if (-not (Test-Path -Path $folderPath)) {
-        Write-Host "The specified folder does not exist."
+    # List available backup folders
+    $backupFolders = Get-ChildItem -Path $basePath -Directory | Where-Object { $_.Name -match '^Wireless_\d{8}_\d{6}$' } | Sort-Object LastWriteTime -Descending
+    
+    if ($backupFolders.Count -eq 0) {
+        Write-Host "No backup folders available for import."
         return
     }
     
-    Write-Host "We are going to import all the profiles from this folder!"
-    $answer = Read-Host "Do you want to continue (Y/N)?"
+    # Display the list of backup folders
+    Write-Host "Available backup folders:"
+    for ($i = 0; $i -lt $backupFolders.Count; $i++) {
+        Write-Host "$($i + 1). $($backupFolders[$i].FullName)"
+    }
     
-    if ($answer -match '^[yY](es)?$') {
-        Write-Host "Importing all profiles from $folderPath..."
-        $files = Get-ChildItem -Path $folderPath -Filter "*.xml"
+    # Prompt for selection
+    $choice = Read-Host "Enter the number of the backup folder to import from"
+    
+    if ($choice -match '^\d+$' -and [int]$choice -le $backupFolders.Count -and [int]$choice -ge 1) {
+        $selectedFolder = $backupFolders[[int]$choice - 1].FullName
+        Write-Host "Importing profiles from $selectedFolder..."
+        
+        $files = Get-ChildItem -Path $selectedFolder -Filter "*.xml"
         
         if ($files.Count -eq 0) {
             Write-Host "No profile files found to import."
@@ -44,7 +55,7 @@ function Import-WifiProfiles {
         
         Write-Host "SSID profiles imported successfully."
     } else {
-        Write-Host "Operation cancelled."
+        Write-Host "Invalid choice. Please enter a valid number."
     }
 }
 
