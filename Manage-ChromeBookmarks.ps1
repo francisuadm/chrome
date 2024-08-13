@@ -50,20 +50,23 @@ function Import-Bookmarks {
     }
 }
 
-# Menu for managing bookmarks
+# Function to display the menu and handle user choices
 function Show-Menu {
-    Write-Host ""
-    Write-Host "1. Export Chrome bookmarks"
-    Write-Host "2. Import Chrome bookmarks"
-    Write-Host "3. Exit"
-    $choice = Read-Host "Enter your choice (1, 2, or 3)"
+    do {
+        Write-Host ""
+        Write-Host "1. Export Chrome bookmarks"
+        Write-Host "2. Import Chrome bookmarks"
+        Write-Host "3. Exit"
+        $choice = Read-Host "Enter your choice (1, 2, or 3)"
 
-    switch ($choice) {
-        1 { Export-Bookmarks }
-        2 { Import-Bookmarks }
-        3 { Exit }
-        default { Write-Host "Invalid choice. Please enter 1, 2, or 3." ; Show-Menu }
-    }
+        switch ($choice) {
+            1 { Export-Bookmarks }
+            2 { Import-Bookmarks }
+            3 { Write-Host "Exiting..."; exit }
+            default { Write-Host "Invalid choice. Please enter 1, 2, or 3." }
+        }
+
+    } while ($choice -ne 3)
 }
 
 # Show menu
