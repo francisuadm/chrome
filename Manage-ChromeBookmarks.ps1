@@ -7,36 +7,64 @@ if (-not (Test-Path -Path $exportPath)) {
     New-Item -Path $exportPath -ItemType Directory
 }
 
-# Function to export Chrome bookmarks
+# Function to export Chrome bookmarks with timestamp
 function Export-Bookmarks {
-    Write-Host "Exporting Chrome bookmarks..."
-    Copy-Item -Path "$importPath\Bookmarks" -Destination "$exportPath\Bookmarks.bak" -Force
-    Write-Host "Bookmarks exported to $exportPath\Bookmarks.bak"
+    $timestamp = (Get-Date).ToString("yyyyMMdd_HHmmss")
+    $backupFile = "$exportPath\Bookmarks_$timestamp.bak"
+    
+    if (Test-Path "$importPath\Bookmarks") {
+        Write-Host "Exporting Chrome bookmarks..."
+        Copy-Item -Path "$importPath\Bookmarks" -Destination $backupFile -Force
+        Write-Host "Bookmarks exported to $backupFile"
+    } else {
+        Write-Host "No bookmarks file found to export."
+    }
 }
 
 # Function to import Chrome bookmarks
 function Import-Bookmarks {
-    Write-Host "Importing Chrome bookmarks..."
-    Copy-Item -Path "$exportPath\Bookmarks.bak" -Destination "$importPath\Bookmarks" -Force
-    Write-Host "Bookmarks imported successfully."
-}
+    # List available backup files
+    $backupFiles = Get-ChildItem -Path $exportPath -Filter "Bookmarks_*.bak" | Sort-Object LastWriteTime -Descending
+    
+    if ($backupFiles.Count -eq 0) {
+        Write-Host "No backup files available for import."
+        return
+    }
+    
+    # Display the list of backup files
+    Write-Host "Available backup files:"
+    for ($i = 0; $i -lt $backupFiles.Count; $i++) {
+        Write-Host "$($i + 1). $($backupFiles[$i].Name)"
+    }
+    
+    # Prompt for selection
+    $choice = Read-Host "Enter the number of the backup file to import"
 
-# Menu for importing bookmarks
-function Show-Menu {
-    Write-Host ""
-    Write-Host "1. Import Chrome bookmarks"
-    Write-Host "2. Exit"
-    $choice = Read-Host "Enter your choice (1 or 2)"
-
-    switch ($choice) {
-        1 { Import-Bookmarks }
-        2 { Exit }
-        default { Write-Host "Invalid choice. Please enter 1 or 2." ; Show-Menu }
+    if ($choice -match '^\d+$' -and [int]$choice -le $backupFiles.Count -and [int]$choice -ge 1) {
+        $selectedFile = $backupFiles[[int]$choice - 1].FullName
+        Write-Host "Importing Chrome bookmarks from $selectedFile..."
+        Copy-Item -Path $selectedFile -Destination "$importPath\Bookmarks" -Force
+        Write-Host "Bookmarks imported successfully."
+    } else {
+        Write-Host "Invalid choice. Please enter a valid number."
     }
 }
 
-# Export Chrome bookmarks
-Export-Bookmarks
+# Menu for managing bookmarks
+function Show-Menu {
+    Write-Host ""
+    Write-Host "1. Export Chrome bookmarks"
+    Write-Host "2. Import Chrome bookmarks"
+    Write-Host "3. Exit"
+    $choice = Read-Host "Enter your choice (1, 2, or 3)"
+
+    switch ($choice) {
+        1 { Export-Bookmarks }
+        2 { Import-Bookmarks }
+        3 { Exit }
+        default { Write-Host "Invalid choice. Please enter 1, 2, or 3." ; Show-Menu }
+    }
+}
 
 # Show menu
 Show-Menu
