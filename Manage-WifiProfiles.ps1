@@ -1,32 +1,36 @@
-# Define the directory to store the wireless profiles
-$folderPath = "C:\IT_Folder\Wireless"
-$fileExtension = "xml"
-
-# Create the export directory if it doesn't exist
-if (-not (Test-Path -Path $folderPath)) {
-    New-Item -Path $folderPath -ItemType Directory
+# Function to generate a unique folder path based on current date and time
+function Get-UniqueFolderPath {
+    $timestamp = (Get-Date).ToString("yyyyMMdd_HHmmss")
+    $folderPath = "C:\IT_Folder\Wireless_$timestamp"
+    return $folderPath
 }
 
 # Function to export all wireless profiles
 function Export-WifiProfiles {
-    Write-Host "Exporting all wireless profiles..."
+    $folderPath = Get-UniqueFolderPath
+    # Create the export directory
+    New-Item -Path $folderPath -ItemType Directory -Force
+    Write-Host "Exporting all wireless profiles to $folderPath..."
     netsh wlan export profile folder=$folderPath key=clear
-    Write-Host "All profiles have been exported successfully."
+    Write-Host "All profiles have been exported successfully to $folderPath."
 }
 
 # Function to import wireless profiles
 function Import-WifiProfiles {
+    # Prompt for the folder path to import from
+    $folderPath = Read-Host "Enter the folder path containing the wireless profiles to import"
+
     if (-not (Test-Path -Path $folderPath)) {
         Write-Host "The specified folder does not exist."
         return
     }
     
-    Write-Host "We are going to import all the profiles in this folder!"
+    Write-Host "We are going to import all the profiles from this folder!"
     $answer = Read-Host "Do you want to continue (Y/N)?"
     
     if ($answer -match '^[yY](es)?$') {
         Write-Host "Importing all profiles from $folderPath..."
-        $files = Get-ChildItem -Path $folderPath -Filter "*.$fileExtension"
+        $files = Get-ChildItem -Path $folderPath -Filter "*.xml"
         
         if ($files.Count -eq 0) {
             Write-Host "No profile files found to import."
