@@ -82,7 +82,7 @@ powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -Executi
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/Manage-WifiProfiles.ps1 | iex\"' -Verb RunAs"
 ```
 
-### PowerShell script to backup/restore Wi-Fi connectivities
+### PowerShell script to execute a PowerShell command with another user account
 ```
-powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/Manage-WifiProfiles.ps1 | iex\"' -Verb RunAs"
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/runas_prompt.ps1 | iex\"' -Verb RunAs"
 ```
