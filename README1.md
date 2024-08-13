@@ -72,7 +72,12 @@ powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -Executi
 ```
 
 
-### PowerShell script to backup and import Chrome bookmarks
+### PowerShell script to export/import Chrome bookmarks
 ```
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/Manage-ChromeBookmarks.ps1 | iex\"' -Verb RunAs"
+```
+
+### PowerShell script to backup/restore Wi-Fi connectivities
+```
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/Manage-WifiProfiles.ps1 | iex\"' -Verb RunAs"
 ```
