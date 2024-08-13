@@ -5,7 +5,7 @@
 
 
 > [!NOTE]
-> :pushpin: **Execute the command as an admin in Windows PowerShell, follow these steps:**
+> :pushpin: **Execute the command as an admin in Windows PowerShell, by following the steps below:**
 
 > [!TIP]
 > :desktop_computer: Press   ****<img src="https://github.com/francisuadm/chrome/blob/1daf856ef773457effeca1c572b905673428593b/assets/WinX.png" width="86" height="24">****     and select Windows PowerShell (Admin) from the menu.
