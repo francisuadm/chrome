@@ -66,7 +66,7 @@ powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -Executi
 ```
 
 
-### Set default app Chrome Browser
+### Set default app Chrome Browser for all users
 ```
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/defaultchrome.ps1 | iex\"' -Verb RunAs"
 ```
