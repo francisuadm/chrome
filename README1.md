@@ -70,3 +70,9 @@ powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -Executi
 ```
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/Set-ChromeDefault.ps1 | iex\"' -Verb RunAs"
 ```
+
+
+### PowerShell script to backup and import Chrome bookmarks
+```
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/Manage-ChromeBookmarks.ps1 | iex\"' -Verb RunAs"
+```
