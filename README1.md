@@ -81,3 +81,8 @@ powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -Executi
 ```
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/Manage-WifiProfiles.ps1 | iex\"' -Verb RunAs"
 ```
+
+### PowerShell script to backup/restore Wi-Fi connectivities
+```
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/Manage-WifiProfiles.ps1 | iex\"' -Verb RunAs"
+```
