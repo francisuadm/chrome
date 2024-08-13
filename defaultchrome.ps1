@@ -1,3 +1,4 @@
+
 # Define the registry paths for HTTP and HTTPS associations
 $httpKey = "HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice"
 $httpsKey = "HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice"
@@ -10,8 +11,8 @@ Set-ItemProperty -Path $httpsKey -Name "ProgId" -Value "ChromeHTML" -Force
 $users = Get-WmiObject -Class Win32_UserProfile | Where-Object { $_.Special -eq $false }
 foreach ($user in $users) {
     $sid = $user.SID
-    $userHttpKey = "HKU:\$sid\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice"
-    $userHttpsKey = "HKU:\$sid\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice"
+    $userHttpKey = "Registry::HKEY_USERS\$sid\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice"
+    $userHttpsKey = "Registry::HKEY_USERS\$sid\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice"
     
     Set-ItemProperty -Path $userHttpKey -Name "ProgId" -Value "ChromeHTML" -Force
     Set-ItemProperty -Path $userHttpsKey -Name "ProgId" -Value "ChromeHTML" -Force
