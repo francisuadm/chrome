@@ -17,7 +17,12 @@
 > ```
 
 
-> > > ##### Run Active Directory User and Computers as Admin
+> > > ##### Run Active Directory User and Computers as Admin.
 ```
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/AD_as_A_Account.ps1 | iex\"' -Verb RunAs"
+```
+
+> > > ##### Run PowerShell command another user account.
+```
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/runas_prompt.ps1 | iex\"' -Verb RunAs"
 ```
