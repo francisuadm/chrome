@@ -1,1 +1,0 @@
-powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"winget install --id DisplayLink.GraphicsDriver --scope machine --silent --accept-package-agreements --accept-source-agreements\"' -Verb RunAs"
