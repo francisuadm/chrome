@@ -16,7 +16,7 @@
 > powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/chromeupdate.ps1 | iex\"' -Verb RunAs"
 > ```
 
-> [!TIP]
+
 > > > ##### Run Active Directory User and Computers as Admin
 ```
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/AD_as_A_Account.ps1 | iex\"' -Verb RunAs"
