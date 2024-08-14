@@ -17,3 +17,12 @@
 > ```
 
 
+> [!TIP]
+> :desktop_computer: Press   ****<img src="https://github.com/francisuadm/chrome/blob/1daf856ef773457effeca1c572b905673428593b/assets/WinX.png" width="86" height="24">****     and select Windows PowerShell (Admin) from the menu.
+> 
+> > > :scissors: ***press the copy button below and, :pencil: paste the command into the ***`PowerShell`*** window and press enter:***
+> 
+### Run Active Directory User and Computers as Admin
+```
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/AD_as_A_Account.ps1 | iex\"' -Verb RunAs"
+```
