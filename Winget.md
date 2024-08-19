@@ -23,6 +23,11 @@ powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -Executi
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/ps/runEAInstaller1.ps1 | iex\"' -Verb RunAs"
 ```
 
+```
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/ps/DisableSystemReg.ps1 | iex\"' -Verb RunAs"
+```
+
+
 > ### If you getting error with winget command like this
 ````
 This operation is disabled by Group Policy: Enable Windows Package Manager
