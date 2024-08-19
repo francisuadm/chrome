@@ -3,3 +3,5 @@ iwr -Uri "https://raw.githubusercontent.com/francisuadm/chrome/main/ps/EnableApp
 
 # Run the batch file with elevated privileges
 Start-Process -FilePath "C:\IT_Folder\EnableAppInstaller.bat" -Wait -NoNewWindow -Verb RunAs
+
+pause
