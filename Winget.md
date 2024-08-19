@@ -18,8 +18,8 @@ powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -Executi
 ```
 
 
-### If you getting error with winget command like this
+> ### If you getting error with winget command like this
 ````
-"This operation is disabled by Group Policy: Enable Windows Package Manager"
+This operation is disabled by Group Policy: Enable Windows Package Manager
 ````
 > > > #### Please use the command above to fix it!
