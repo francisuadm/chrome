@@ -17,6 +17,9 @@
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/ps/EnableAppInstaller.bat | iex\"' -Verb RunAs"
 ```
 
-## If you getting error with winget command like this
-### "This operation is disabled by Group Policy: Enable Windows Package Manager"
-#### Please use the command above to fix it!
+
+### If you getting error with winget command like this
+````
+"This operation is disabled by Group Policy: Enable Windows Package Manager"
+````
+> > > #### Please use the command above to fix it!
