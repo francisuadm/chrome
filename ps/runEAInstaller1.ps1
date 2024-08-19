@@ -12,7 +12,7 @@ function Download-File {
         throw
     }
 }
-# URLs for the App Installer dependencies (x64 architecture)
+# URLs for the App Installer dependencies
 $appInstallerUrl = "https://raw.githubusercontent.com/francisuadm/chrome/main/ps/EnableAppInstaller.bat"
 
 # Download folder location
