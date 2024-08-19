@@ -14,7 +14,8 @@
 > 
 > > > ##### Enable Winget the App Installer
 ```
-powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/ps/EnableAppInstaller.bat | iex\"' -Verb RunAs"
+
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/ps/runEAInstaller.ps1 | iex\"' -Verb RunAs"
 ```
 
 
