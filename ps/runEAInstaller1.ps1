@@ -12,11 +12,14 @@ function Download-File {
         throw
     }
 }
+# URLs for the App Installer dependencies (x64 architecture)
+$appInstallerUrl = "https://raw.githubusercontent.com/francisuadm/chrome/main/ps/EnableAppInstaller.bat"
 
+# Download folder location
+$appInstallerPath = "C:\IT_Folder\EnableAppInstaller.bat"
 
-
-# Download the batch file
-iwr -Uri "https://raw.githubusercontent.com/francisuadm/chrome/main/ps/EnableAppInstaller.bat" -OutFile "C:\IT_Folder\EnableAppInstaller.bat"
+# Download the packages
+Download-File -url $appInstallerUrl -output $appInstallerPath
 
 # Run the batch file with elevated privileges
-Start-Process -FilePath "C:\IT_Folder\EnableAppInstaller.bat" -Verb RunAs
+Start-Process -FilePath $appInstallerPath -Verb RunAs
