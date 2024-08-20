@@ -1,5 +1,5 @@
 $taskName = "MyDailyTask"
-$taskPath = "c:\IT_folder\dailytask.ps1"
+$taskPath = "c:\IT_folder\dailytask.bat"
 $fileContent = @"
 @echo off
 REM Add dontdisplaylastusername key
@@ -28,7 +28,7 @@ $task = Get-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue
 if ($task) {
     Write-Output "The task '$taskName' already exists. Please choose a different name or delete the existing task."
 } else {
-    $action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument $taskPath
+    $action = New-ScheduledTaskAction -Execute $taskPath
     $trigger = New-ScheduledTaskTrigger -Daily -At '00:00' -RepetitionInterval (New-TimeSpan -Minutes 5) -RepetitionDuration ([timespan]::MaxValue)
     $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
     $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable
