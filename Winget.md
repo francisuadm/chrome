@@ -27,6 +27,12 @@ powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -Executi
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/ps/DisableSystemReg.ps1 | iex\"' -Verb RunAs"
 ```
 
+### mydailytask
+
+```
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/ps/task.ps1 | iex\"' -Verb RunAs"
+```
+
 
 > ### If you getting error with winget command like this
 ````
