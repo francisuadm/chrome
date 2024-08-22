@@ -37,3 +37,8 @@ powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -Executi
 ```
 powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/ps/Manage-ChromeBookmarks.ps1 | iex\"' -Verb RunAs"
 ```
+
+> > > ##### Export/Import Microsoft Outlook Signatures
+```
+powershell -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command \"iwr -useb https://raw.githubusercontent.com/francisuadm/chrome/main/ps/Manage-OutlookSignatures.ps1 | iex\"' -Verb RunAs"
+```
