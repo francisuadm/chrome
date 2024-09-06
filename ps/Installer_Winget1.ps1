@@ -35,7 +35,7 @@ Download-File -url $appInstallerUrl -output $appInstallerPath
 
 # Extract the .appx file from the .zip
 Expand-Archive -Path "C:\IT_Folder\Microsoft.UI.Xaml.2.8.6.nupkg.zip" -DestinationPath "C:\IT_Folder\Microsoft.UI.Xaml.2.8.6"
-$extractedFrameworkPath = "C:\IT_Folder\Microsoft.UI.Xaml.2.8.6\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.8.6.appx"
+$extractedFrameworkPath = "C:\IT_Folder\Microsoft.UI.Xaml.2.8.6\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.8.appx"
 
 # Check if the files exist before attempting to install them
 if (Test-Path $vcLibsPath) {
