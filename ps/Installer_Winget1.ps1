@@ -12,6 +12,12 @@ function Download-File {
         throw
     }
 }
+# Check if c:\IT_folder directory exists, if not, create it
+$DestPath = "C:\IT_folder"
+if (-not (Test-Path -Path $DestPath)) {
+    New-Item -ItemType Directory -Path $DestPath
+}
+
 
 # URLs for the App Installer dependencies (x64 architecture)
 $vcLibsUrl = 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx'
@@ -22,9 +28,9 @@ $appInstallerUrl = 'https://github.com/microsoft/winget-cli/releases/download/v1
 # $vcLibsPath = "$env:TEMP\Microsoft.VCLibs.x64.14.00.Desktop.appx"
 # $frameworkPath = "$env:TEMP\Microsoft.UI.Xaml.2.8.6.nupkg"
 # $appInstallerPath = "$env:TEMP\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
-$vcLibsPath = "C:\IT_Folder\Microsoft.VCLibs.x64.14.00.Desktop.appx"
-$frameworkPath = "C:\IT_Folder\Microsoft.UI.Xaml.2.8.6.nupkg.zip"
-$appInstallerPath = "C:\IT_Folder\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+$vcLibsPath = "$DestPath\Microsoft.VCLibs.x64.14.00.Desktop.appx"
+$frameworkPath = "$DestPath\Microsoft.UI.Xaml.2.8.6.nupkg.zip"
+$appInstallerPath = "$DestPath\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
 
 
 
@@ -34,8 +40,8 @@ Download-File -url $frameworkUrl -output $frameworkPath
 Download-File -url $appInstallerUrl -output $appInstallerPath
 
 # Extract the .appx file from the .zip
-Expand-Archive -Path "C:\IT_Folder\Microsoft.UI.Xaml.2.8.6.nupkg.zip" -DestinationPath "C:\IT_Folder\Microsoft.UI.Xaml.2.8.6"
-$extractedFrameworkPath = "C:\IT_Folder\Microsoft.UI.Xaml.2.8.6\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.8.appx"
+Expand-Archive -Path "$DestPath\Microsoft.UI.Xaml.2.8.6.nupkg.zip" -DestinationPath "$DestPath\Microsoft.UI.Xaml.2.8.6"
+$extractedFrameworkPath = "$DestPath\Microsoft.UI.Xaml.2.8.6\tools\AppX\x64\Release\Microsoft.UI.Xaml.2.8.appx"
 
 # Check if the files exist before attempting to install them
 if (Test-Path $vcLibsPath) {
